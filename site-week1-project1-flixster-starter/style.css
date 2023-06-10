@@ -1,0 +1,90 @@
+#close-search-btn{
+    color:white;
+    text-align: center;
+}
+.searchForm{
+    color: white;
+    text-align: center;
+}
+
+
+
+body{
+    background-color: #343434;
+}
+
+/*movie gride section */
+.movies-grid{
+    display: flex;
+    flex-direction:row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+
+
+    
+    
+}
+.movies-grid .movie-card {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap-reverse;
+    flex-flow: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width:500px ;
+    align-items: flex-start;
+}
+
+.movie-card .movie-title {
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+}
+
+.movie-votes {
+    color: white;
+    text-align: center;
+}
+
+.movie-poster {
+    border-radius: 50px;
+    height: fit-content;
+    width: fit-content;
+    object-fit: cover;
+}
+
+.movie-poster:hover{
+    transition: all 0.5s ease-in-out;
+    transform: scale(1.05 );
+}
+/* .movies-card{
+    
+    flex: 1 0 350px;
+    flex-flow: column wrap;
+    font-size: 24px;
+    margin:16px;
+} */
+
+.parentViewMoreButtonDiv{
+    color:white;
+    position:relative;
+}
+
+.viewMoreButtonDiv{
+    color:white;
+    position: absolute;
+    display: flex;
+    justify-content:center;
+    left:48%;
+    
+  
+}
+
+#load-more-movies-btn{
+    text-align: center;
+    bottom: 5px;
+    
+}
