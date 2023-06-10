@@ -21,20 +21,15 @@ movieApiUrls = {
 }
 
 const callMovieApi = async () => {
-    console.log(page)
-    console.log(movieApiUrls.moviesData+page)
     const moviesData = await fetch(movieApiUrls.moviesData+page)
     const moviesDataJson = await moviesData.json();
-    console.log(moviesDataJson)
     return moviesDataJson
     
 }
 
 const callSearchMovieApi = async (movieSearchQueryurl) => {
-    console.log(movieSearchQueryurl)
     const moviesData = await fetch(movieSearchQueryurl)
     const moviesDataJson = await moviesData.json();
-    console.log(moviesDataJson)
     return moviesDataJson
 
 }
@@ -57,7 +52,6 @@ const createElements= () => {
      movieReleaseDate: document.createElement('h4'),
      movieOverView: document.createElement('h4')
     }
-    console.log(movieElements.movieTitle)
     return movieElements
 }
 
@@ -71,11 +65,7 @@ const addMovieInfoToMovieElement =  (movieElements, movieObj) => {
     movieElements.movieVoteAvg.innerHTML = `rating: ${movieObj.vote_average.toFixed(1)}`
     movieElements.movieReleaseDate.innerHTML = movieObj.release_date
     movieElements.movieOverView.innerHTML = movieObj.overview
-    console.log(movieElements.movieOverView)
-    console.log(movieElements.movieReleaseDate)
-    console.log(movieElements.movieTitle)
-    console.log(movieElements.movieImg)
-    console.log(movieElements.movieVoteAvg)
+
 }
 
 const createMovieElementClasses = (movieElements) => {
@@ -91,7 +81,6 @@ const createMovieElementClasses = (movieElements) => {
 
 const addMovieElementtoMovieDiv = (movieElements) => {
     const movieBoxDiv = htmlTags.moviesGrid
-    console.log(movieBoxDiv)
     movieBoxDiv.appendChild(movieElements.movieCardDiv)
     movieElements.movieCardDiv.appendChild(movieElements.movieTitle)
     movieElements.movieCardDiv.appendChild(movieElements.movieImg)
@@ -104,7 +93,6 @@ const createTagsForMovie = (movieObj) => {
     addMovieInfoToMovieElement(movieElements, movieObj)
     createMovieElementClasses(movieElements)
     addMovieElementtoMovieDiv(movieElements)
-    //console.log(movieBoxDiv)
     
 } 
 
@@ -115,26 +103,17 @@ const populateMoviesOnPage = (moviesArray) => {
 } 
 
 const searchMovie = () => {
-    console.log(htmlTags.moviesSearchField)
     movieName = htmlTags.moviesSearchField.value
     movieRequested = movieApiUrls.userSearchQuery+movieName
-    console.log(movieRequested)
     return movieRequested
 
-    console.log(movieName)
 }
 
-console.log(htmlTags.moviesSearchField)
-
 const ifValidSearchShowSearchedMovie= async (event) => {
-    console.log('i WAS HERE!')
     movieSearchedfor = htmlTags.moviesSearchField.value
-    console.log(movieSearchedfor) 
     if (movieSearchedfor== '' || movieSearchedfor == null){
-        console.log('not valid input')
         return false 
     }
-    console.log('is Valid input')
     event.preventDefault();
     const call = await showSearchedMovie()
 
@@ -158,12 +137,11 @@ const populateMoviesObject = (movieObj) => {
     const movieElements = createElements()
     addMovieInfoToMovieElement(movieElements, movieObj)
     createMovieElementClasses(movieElements)
-    console.log(movieElements.movieTitle.innerText)
     moviesObject[movieElements.movieTitle.innerText] = {
         'overview' : movieObj.overview,
         'release_date' : movieObj.release_date
     }
-    console.log(moviesObject)
+
 }
 
 const addMovieInformation = (moviesArray) => {
@@ -179,7 +157,6 @@ const showMoreMovieInformation = () => {
 const movies = async () => {
     const moviesApiObject = await callMovieApi()
     const moviesArray = getMoviesTrendingArray(moviesApiObject) 
-    console.log(moviesArray)
     populateMoviesOnPage(moviesArray)
     addMovieInformation(moviesArray)
   
@@ -187,11 +164,6 @@ const movies = async () => {
 
 
 movies()
-console.log(moviesObject)
 
 htmlTags.moviesSearchButton.addEventListener("click", ifValidSearchShowSearchedMovie)
 htmlTags.moviesViewMoreButton.addEventListener("click", showMoreMovies)
-//  htmltags.moviesPoster.addEventListener('click', )
-
-// moviesTrendingArray = Object.keys(movies)
-// console.log(moviesTrendingArray)
