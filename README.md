@@ -1,9 +1,9 @@
 
 ## Week 1 Assignment: Flixster
 
-Submitted by: **NAME**
+Submitted by: **Daniel Oluwarotimi**
 
-Estimated time spent: **#** hours spent in total
+Estimated time spent: **12** hours spent in total
 
 Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
@@ -46,13 +46,24 @@ Deployed Application (optional): [Flixster Deployed Site](ADD_LINK_HERE)
 
 - Did the topics discussed in your labs prepare you to complete the assignment? Be specific, which features in your weekly assignment did you feel unprepared to complete? 
 
-Yes it did, mainly learning about javascript objects and function really helped me store data and call my functinos.  I felt prepared to complete this assignment, like the view more feature, search button feature.
+Yes it did, mainly learning about javascript objects and function really helped me store data and call my functinos.  I felt prepared to complete this assignment, like the view more feature, search button feature. I did not feel ready to complete the styling of the movie page.
 
 - If you had more time, what would you have done differently? Would you have added additional features? Changed the way your project responded to a particular event, etc. 
   
 Uploaded this to a github page
 
 - Reflect on your project demo, what went well? Were there things that maybe didn't go as planned? Did you notice something that your peer did that you would like to try next time?
+
+The project went well, I didn't expect me to struggle a lot with the css part but i did. I would like to try to add more css to make my website more more nicer. 
+
+### Open-source libraries used
+
+- Add any links to open-source libraries used in your project.
+https://developer.themoviedb.org/docs
+
+### Shout out
+
+Micheal 
 
 The project went well, I didn't expect me to struggle a lot with the css part but i did. I would like to try to add more css to make my website more more nicer. 
 
